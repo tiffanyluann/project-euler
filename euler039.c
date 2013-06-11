@@ -44,14 +44,11 @@ int main(void){
 
     for (a = 1; a < half_perimeter; a++){
       for (b = a; b < half_perimeter; b++){
-        for (c = b; c < half_perimeter; c++){
-          if (a + b + c == perimeter){
-            if (isRightTriangle(a, b, c)){
-              //printf("%i + %i + %i = %i \n", a, b, c, perimeter);
-              num_of_solutions++;
-              }
-            }
-          }
+        c = perimeter - a - b;
+        if (isRightTriangle(a, b, c)){
+          //printf("%i + %i + %i = %i \n", a, b, c, perimeter);
+          num_of_solutions++;
+          }       
         }
       }
 
